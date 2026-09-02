@@ -27,8 +27,16 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
 - Login/ Sign Up
     - Sign In /Sign Up page
     - redirect to Browse page
+    - Routing
     - login form
     - Sign up form
+    - Form Validation
+    - useRef Hooks
+    - Firebase setup
+    - Deploying our app to production
+    - Create signup user Account
+    
+
 
 
 - Browse (only comes after authentication)
