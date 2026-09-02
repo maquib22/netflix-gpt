@@ -35,7 +35,10 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
     - Firebase setup
     - Deploying our app to production
     - Create signup user Account
+    - implement Sign In user Api
+    - Create redux store with userSlice
     
+
 
 
 
