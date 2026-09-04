@@ -1,17 +1,19 @@
 import { useRef, useState } from "react";
 import { checkValidData } from "../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "../utils/firbase";
 import { useNavigate } from "react-router-dom";
 const Body = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  
+
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   const handleForm = () => {
     // Validate the form data
@@ -21,7 +23,7 @@ const Body = () => {
     const message = checkValidData(
       email.current.value,
       password.current.value,
-    //   name.current.value
+      //   name.current.value
     );
     // console.log(message);
     setErrorMessage(message);
@@ -32,15 +34,16 @@ const Body = () => {
     if (!isSignInForm) {
       // Sing Up Logic
       createUserWithEmailAndPassword(
-        auth, 
+        auth,
         email.current.value,
         password.current.value,
-        ).then((userCredential) => {
+      )
+        .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse")
-          
+          navigate("/browse");
+
           // ...
         })
         .catch((error) => {
@@ -50,23 +53,24 @@ const Body = () => {
         });
     } else {
       // Sing In Logic
-      signInWithEmailAndPassword(auth, email.current.value,
-        password.current.value)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value,
+      )
         .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log(user);
-            navigate("/browse")
-    
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    setErrorMessage(errorCode + " - " + errorMessage);
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          navigate("/browse");
 
-  });
-
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + " - " + errorMessage);
+        });
     }
   };
   const toggleSignInForm = () => {
@@ -74,58 +78,60 @@ const Body = () => {
   };
   return (
     <>
-      <div className="absolute ">
+      <div class="flex min-h-screen flex-col items-center bg-black bg-[url('https://occ-0-1742-2773.1.nflxso.net/dnm/api/v6/iMyKkw5SVrkCXbCfSBEb_Pjar5Y/AAAAQBTxE26zgLJoqZnmxUCfZtVJ2HbJUsVonZ_9Uo-pn68zarPK.png')] bg-cover bg-center text-white">
+        {/* <div className="absolute ">
         <img
-          className="h-screen"
-          src="https://occ-0-1174-300.1.nflxso.net/dnm/api/v6/iMyKkw5SVrkCXbCfSBEb_Pjar5Y/AAAAQBTxE26zgLJoqZnmxUCfZtVJ2HbJUsVonZ_9Uo-pn68zarPK.png"
+          className="bg-cover bg-center"
+          src="https://occ-0-1742-2773.1.nflxso.net/dnm/api/v6/iMyKkw5SVrkCXbCfSBEb_Pjar5Y/AAAAQBTxE26zgLJoqZnmxUCfZtVJ2HbJUsVonZ_9Uo-pn68zarPK.png"
           alt="bg-img"
         />
-      </div>
-      <form
-        className="absolute p-4  top-1/2 left-1/2 -translate-1/2"
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <h1 className="text-white text-3xl mb-4">
-          Enter your info to {isSignInForm ? "Sign In" : "Sign Up"}
-        </h1>
-        {!isSignInForm && (
-          <input
-            ref={name}
-            type="text"
-            placeholder="Enter Name"
-            className="p-2 mb-2 border w-full text-gray-200 border-gray-300"
-          />
-        )}
+      </div> */}
+        <form
+          className="absolute p-4  top-1/2 left-1/2 -translate-1/2"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <h1 className="text-white text-3xl mb-4">
+            Enter your info to {isSignInForm ? "Sign In" : "Sign Up"}
+          </h1>
+          {!isSignInForm && (
+            <input
+              ref={name}
+              type="text"
+              placeholder="Enter Name"
+              className="p-2 mb-2 border w-full text-gray-200 border-gray-300"
+            />
+          )}
 
-        <input
-          ref={email}
-          type="email"
-          placeholder="Email address"
-          className="p-2  border w-full text-gray-200 border-gray-300"
-        />
-        <input
-          ref={password}
-          type="password"
-          placeholder="Password"
-          className="p-2 mt-2 border w-full text-gray-200 border-gray-300"
-        />
-        <p className="text-red-500">{errorMessage}</p>
-        <button
-          type="submit"
-          className="bg-red-700 text-white mt-2 p-2 w-full"
-          onClick={handleForm}
-        >
-          {isSignInForm ? "Sign In" : "Sign Up"}
-        </button>
-        <p
-          className="text-white mt-2 cursor-pointer hover:text-red-700"
-          onClick={toggleSignInForm}
-        >
-          {isSignInForm
-            ? "New to NetFlix? Sign Up Now"
-            : "Already registered? Sign In now"}
-        </p>
-      </form>
+          <input
+            ref={email}
+            type="email"
+            placeholder="Email address"
+            className="p-2  border w-full text-gray-200 border-gray-300"
+          />
+          <input
+            ref={password}
+            type="password"
+            placeholder="Password"
+            className="p-2 mt-2 border w-full text-gray-200 border-gray-300"
+          />
+          <p className="text-red-500">{errorMessage}</p>
+          <button
+            type="submit"
+            className="bg-red-700 text-white mt-2 p-2 w-full"
+            onClick={handleForm}
+          >
+            {isSignInForm ? "Sign In" : "Sign Up"}
+          </button>
+          <p
+            className="text-white mt-2 cursor-pointer hover:text-red-700"
+            onClick={toggleSignInForm}
+          >
+            {isSignInForm
+              ? "New to NetFlix? Sign Up Now"
+              : "Already registered? Sign In now"}
+          </p>
+        </form>
+      </div>
     </>
   );
 };
