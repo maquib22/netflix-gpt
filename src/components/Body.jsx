@@ -5,7 +5,8 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firbase";
-import { useNavigate } from "react-router-dom";
+import { BG } from "../utils/constants";
+// import { useNavigate } from "react-router-dom";
 const Body = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -13,7 +14,7 @@ const Body = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleForm = () => {
     // Validate the form data
@@ -42,7 +43,7 @@ const Body = () => {
           // Signed up
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
+          // navigate("/browse");
 
           // ...
         })
@@ -62,7 +63,7 @@ const Body = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
+          // navigate("/browse");
 
           // ...
         })
@@ -78,14 +79,7 @@ const Body = () => {
   };
   return (
     <>
-      <div class="flex min-h-screen flex-col items-center bg-black bg-[url('https://occ-0-1742-2773.1.nflxso.net/dnm/api/v6/iMyKkw5SVrkCXbCfSBEb_Pjar5Y/AAAAQBTxE26zgLJoqZnmxUCfZtVJ2HbJUsVonZ_9Uo-pn68zarPK.png')] bg-cover bg-center text-white">
-        {/* <div className="absolute ">
-        <img
-          className="bg-cover bg-center"
-          src="https://occ-0-1742-2773.1.nflxso.net/dnm/api/v6/iMyKkw5SVrkCXbCfSBEb_Pjar5Y/AAAAQBTxE26zgLJoqZnmxUCfZtVJ2HbJUsVonZ_9Uo-pn68zarPK.png"
-          alt="bg-img"
-        />
-      </div> */}
+      <div className={`flex min-h-screen flex-col items-center bg-black bg-[url('${BG}')] bg-cover bg-center text-white`}>
         <form
           className="absolute p-4  top-1/2 left-1/2 -translate-1/2"
           onSubmit={(e) => e.preventDefault()}

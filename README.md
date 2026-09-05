@@ -37,6 +37,10 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
     - Create signup user Account
     - implement Sign In user Api
     - Create redux store with userSlice
+    - BugFix: if the user is not logged in Redirect / browse to login page and vice-versa
+    - Unsubscribe to the onAuthStateChanged to callback 
+    - Registed on TMDB API & create an app & get access token 
+    - Get Data from TMDB now playing movies Api
     
 
 
