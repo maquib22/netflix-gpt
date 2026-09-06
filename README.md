@@ -41,6 +41,10 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
     - Unsubscribe to the onAuthStateChanged to callback 
     - Registed on TMDB API & create an app & get access token 
     - Get Data from TMDB now playing movies Api
+    - Custom Hook for Now Playing Movie
+    - Create MovieSlice
+    - Update Store wiith Movies Data
+
     
 
 
@@ -53,6 +57,10 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
         - Title & Description
         - Movie Suggestions
             - Movie List * N
+    - Fetch movie trailer videos from TMDB API
+    - Custom Hook for Movie Trailer
+    - Store trailer video data in Redux store
+    - Play movie trailer in the background using YouTube iframe
 
 
 - NetflixGPT
