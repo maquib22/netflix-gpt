@@ -66,3 +66,29 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
 - NetflixGPT
     - Search Bar
     - Movie Suggestions# netflix-gpt
+
+
+
+
+
+# Features
+- Login/ Sign Up
+    - Sign In /Sign Up page
+    - redirect to Browse page
+    - Routing
+    - login form
+    - Sign up form
+    - Form Validation
+    - useRef Hooks
+    - Firebase setup
+    - Deploying our app to production
+    - Create signup user Account
+    - implement Sign In user Api
+    - Create redux store with userSlice
+    - BugFix: if the user is not logged in Redirect / browse to login page and vice-versa
+    - Unsubscribe to the onAuthStateChanged to callback 
+    - Registed on TMDB API & create an app & get access token 
+    - Get Data from TMDB now playing movies Api
+    - Custom Hook for Now Playing Movie
+    - Create MovieSlice
+    - Update Store wiith Movies Data
