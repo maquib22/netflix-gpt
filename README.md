@@ -44,6 +44,7 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
     - Custom Hook for Now Playing Movie
     - Create MovieSlice
     - Update Store wiith Movies Data
+    - Secondary Container
 
     
 
@@ -57,38 +58,21 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
         - Title & Description
         - Movie Suggestions
             - Movie List * N
+            - Reusable Movie List component
+            - Reusable Movie Card component
+            - Display movie posters from TMDB image CDN
+            - Horizontally scrollable movie rows
     - Fetch movie trailer videos from TMDB API
     - Custom Hook for Movie Trailer
     - Store trailer video data in Redux store
     - Play movie trailer in the background using YouTube iframe
+    - Get Popular Movies data from TMDB API
+    - Custom Hook for Popular Movies
+    - Store Popular Movies data in Redux store
 
 
 - NetflixGPT
     - Search Bar
-    - Movie Suggestions# netflix-gpt
+    - Movie Suggestions
 
-
-
-
-
-# Features
-- Login/ Sign Up
-    - Sign In /Sign Up page
-    - redirect to Browse page
-    - Routing
-    - login form
-    - Sign up form
-    - Form Validation
-    - useRef Hooks
-    - Firebase setup
-    - Deploying our app to production
-    - Create signup user Account
-    - implement Sign In user Api
-    - Create redux store with userSlice
-    - BugFix: if the user is not logged in Redirect / browse to login page and vice-versa
-    - Unsubscribe to the onAuthStateChanged to callback 
-    - Registed on TMDB API & create an app & get access token 
-    - Get Data from TMDB now playing movies Api
-    - Custom Hook for Now Playing Movie
-    - Create MovieSlice
-    - Update Store wiith Movies Data
+# netflix-gpt
