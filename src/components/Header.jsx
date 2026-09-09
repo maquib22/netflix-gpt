@@ -63,9 +63,10 @@ const Header = () => {
    }
 
   return (
-    <div className="p-4 h-16 absolute z-10 flex justify-between w-full">
-      <div className="w-25">
+    <div className="p-4 h-16 absolute z-10 flex flex-col md:flex-row gap-4  items-center md:justify-between w-full">
+      <div className="">
         <img
+        className="w-25 "
           src={LOGO}
           alt="logo"
         />

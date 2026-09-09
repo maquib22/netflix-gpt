@@ -28,53 +28,97 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
     - Sign In /Sign Up page
     - redirect to Browse page
     - Routing
-    - login form
-    - Sign up form
-    - Form Validation
-    - useRef Hooks
-    - Firebase setup
-    - Deploying our app to production
-    - Create signup user Account
-    - implement Sign In user Api
-    - Create redux store with userSlice
-    - BugFix: if the user is not logged in Redirect / browse to login page and vice-versa
-    - Unsubscribe to the onAuthStateChanged to callback 
-    - Registed on TMDB API & create an app & get access token 
-    - Get Data from TMDB now playing movies Api
-    - Custom Hook for Now Playing Movie
-    - Create MovieSlice
-    - Update Store wiith Movies Data
-    - Secondary Container
+    # Netflix GPT
 
-    
+    A Netflix-inspired movie browsing app built with React and Vite. Users can create an account or sign in with Firebase, browse TMDB movie data, watch trailers, and use GPT to get movie recommendations.
 
+    ## Features
 
+    ### Authentication
 
+    - Sign up and sign in with email and password using Firebase Authentication.
+    - Client-side email and password validation.
+    - Auth-state listener that keeps the user state synchronized with Redux.
+    - Automatic navigation between the login and browse pages when authentication changes.
+    - Sign out support.
 
-- Browse (only comes after authentication)
-    - header
-    - Main Movie
-        - Tailer in Background 
-        - Title & Description
-        - Movie Suggestions
-            - Movie List * N
-            - Reusable Movie List component
-            - Reusable Movie Card component
-            - Display movie posters from TMDB image CDN
-            - Horizontally scrollable movie rows
-    - Fetch movie trailer videos from TMDB API
-    - Custom Hook for Movie Trailer
-    - Store trailer video data in Redux store
-    - Play movie trailer in the background using YouTube iframe
-    - Get Popular Movies data from TMDB API
-    - Custom Hook for Popular Movies
-    - Store Popular Movies data in Redux store
+    ### Browse experience
 
+    - Netflix-style header with user profile, sign-out, and GPT search controls.
+    - Featured movie with title, description, and a YouTube trailer background.
+    - TMDB now-playing and popular movie rows.
+    - Reusable movie list and movie card components.
+    - Horizontally scrollable movie suggestions.
+    - Redux Toolkit state for the authenticated user, movies, trailer, GPT results, and app configuration.
 
-- NetflixGPT
-    - Gpt search page
-    - Search Bar
-    - Multi -language feature *
-    - Movie Suggestions
+    ### NetflixGPT search
 
-# netflix-gpt
+    - GPT-powered movie recommendations from a natural-language prompt.
+    - TMDB lookup for each recommended title so results use real movie posters and metadata.
+    - Toggle between the browse view and GPT search view.
+    - English and Hindi search interface text.
+
+    ## Tech stack
+
+    - React 19 and Vite
+    - React Router
+    - Redux Toolkit and React Redux
+    - Firebase Authentication
+    - TMDB API
+    - OpenAI API
+    - Tailwind CSS
+
+    ## Getting started
+
+    ### Prerequisites
+
+    - Node.js and npm
+    - A TMDB API bearer token
+    - An OpenAI API key
+    - A Firebase project with Email/Password authentication enabled
+
+    ### Install
+
+    ```bash
+    npm install
+    ```
+
+    Create a `.env` file in the project root:
+
+    ```env
+    VITE_TMDB_KEY=your_tmdb_bearer_token
+    VITE_OPENAI_KEY=your_openai_api_key
+    ```
+
+    The Firebase web configuration is currently defined in `src/utils/firbase.js`. Configure Firebase Authentication before using sign up or sign in.
+
+    ### Run locally
+
+    ```bash
+    npm run dev
+    ```
+
+    Open the local URL printed by Vite, then use the login page to create an account or sign in.
+
+    ## Available scripts
+
+    ```bash
+    npm run dev       # Start the Vite development server
+    npm run build     # Create a production build
+    npm run preview   # Preview the production build locally
+    npm run lint      # Run ESLint
+    ```
+
+    ## Project structure
+
+    ```text
+    src/
+      components/    React UI components and page sections
+      hooks/         TMDB and trailer data-fetching hooks
+      utils/         Redux slices, API configuration, Firebase, and validation
+      App.jsx        Application routes
+    ```
+
+    ## Deployment
+
+    Build the app with `npm run build` and deploy the generated `dist` directory using a static hosting provider. Configure the `VITE_TMDB_KEY` and `VITE_OPENAI_KEY` environment variables in the hosting provider before building.

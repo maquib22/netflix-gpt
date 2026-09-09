@@ -79,12 +79,15 @@ const Body = () => {
   };
   return (
     <>
-      <div className={`flex min-h-screen flex-col items-center bg-black bg-[url('${BG}')] bg-cover bg-center text-white`}>
+      <div
+        className="flex min-h-screen flex-col items-center bg-black bg-cover bg-center text-white"
+        style={{ backgroundImage: `url(${BG})` }}
+      >
         <form
-          className="absolute p-4  top-1/2 left-1/2 -translate-1/2"
+          className="absolute p-4 w-full md:w-1/4 top-1/2 left-1/2 -translate-1/2"
           onSubmit={(e) => e.preventDefault()}
         >
-          <h1 className="text-white text-3xl mb-4">
+          <h1 className="text-white text-2xl md:text-3xl mb-4">
             Enter your info to {isSignInForm ? "Sign In" : "Sign Up"}
           </h1>
           {!isSignInForm && (
