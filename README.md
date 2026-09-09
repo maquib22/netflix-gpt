@@ -72,7 +72,9 @@ using NPM installed the Tailwind css and configerd the file in the vite.config.j
 
 
 - NetflixGPT
+    - Gpt search page
     - Search Bar
+    - Multi -language feature *
     - Movie Suggestions
 
 # netflix-gpt
