@@ -33,7 +33,10 @@ const GptSearchBar = () => {
 
     // make an api call to GPT API  to get movie result
     const gptResult = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      // model: "gpt-3.5-turbo",
+
+      /* Open Router  */
+      model: "openai/gpt-3.5-turbo",
       messages: [{ role: "user", content: gptQuery }],
     });
     console.log(gptResult.choices[0]?.message?.content);
